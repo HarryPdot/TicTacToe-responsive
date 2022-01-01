@@ -33,6 +33,10 @@ header {
 }
 
 
+.three-sections {
+	display: grid;
+	grid-template-columns: 5fr 3fr 5fr;
+}
 
 /* grid */
 
@@ -90,4 +94,102 @@ header {
 	border-bottom: none;
 }
 
+/* images when you when, and text */
+.left-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	visibility: hidden;
+}
 
+.marioVictory {
+	background-image: url(images/mario-victory.png);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 38vh;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.marioVictoryText {
+	font-size: 6vh;
+	display: flex;
+	align-items: center;
+	font-weight: bold;
+}
+
+.right-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	visibility: hidden;
+}
+
+.bowserVictory {
+	background-image: url(images/bowser-victory.png);
+	display: flex;
+	justify-content: center;
+	height: 38vh;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.bowserVictoryText {
+	font-size: 6vh;
+	display: flex;
+	align-items: center;
+	font-weight: bold;
+}
+
+
+/*buttons to reset, and go next round*/
+.buttons {
+	display: flex;
+	justify-content: center;
+	height: 5vh;
+}
+
+.reset-Btn, 
+.next-round {
+    text-align: center;
+    height: 5vh;
+	cursor:pointer;
+	background-color: rgba(190,0,95,0.7);
+	border:none;
+	color: white;
+	font-weight:600;
+	border-radius: 5px;
+}
+
+.next-round:hover,
+.reset-Btn:hover {
+	background-color: rgb(190,0,95);
+	transition: 0.3s;
+}
+
+.reset-Btn {
+	display: none;
+}
+
+.next-round {
+	visibility: hidden;
+}
+
+
+/* grid images */
+.marioImg {
+	background-image: url(images/mario.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 100px;
+	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.bowserImg {
+	background-image: url(images/bowser.png);
+	height: 100px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}

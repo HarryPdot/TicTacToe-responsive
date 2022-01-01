@@ -169,7 +169,7 @@ body {
 } */
 
 /* reset button */
-.reset-Btn, 
+/* .reset-Btn, 
 .next-round {
     text-align: center;
     width: 200px;
@@ -198,31 +198,30 @@ body {
 
 section {
     text-align: center;
-}
+} */
 
 
 /* game images */ 
-.bgimg{
+/* .bgimg{
 	background-image: url(images/mario-background.png);
 	background-repeat: no-repeat;
 	width: 1900px;
 	height: 760px;
 	background-size: contain;
-}
+} */
 
-#cell1 {
+/* #cell1 {
 	width: 100%;
-}
+} */
 
-.marioImg {
+/* .marioImg {
 	background-image: url(images/mario.png);
 	background-size: contain;
 	background-repeat: no-repeat;
 	height: 100px;
 	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 	animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-	
-	
+
 }
 
 .bowserImg {
@@ -232,9 +231,9 @@ section {
 	background-repeat: no-repeat;
 	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 	        animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-}
+} */
 
-.marioVictory {
+/* .marioVictory {
 	background-image: url(images/mario-victory.png);
 	width: 100%;
 	background-size: contain;
@@ -269,15 +268,15 @@ section {
 	font-weight: bold;
 	-webkit-animation: flip-2-ver-left-fwd 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 	animation: flip-2-ver-left-fwd 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-}
+} */
 
-.right-grid {
+/* .right-grid {
 	width: 100%;
 	height: 100%;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	visibility:hidden;
-}
+} */
 
 .stands {
 	height:135px;

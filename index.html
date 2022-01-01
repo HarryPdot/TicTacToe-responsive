@@ -10,32 +10,52 @@
 </head>
 <body>
     <div class="container">
-
             <header>
                 <h1 class="title">Mario vs Bowser</h1>
             </header>
+            <div class="three-sections">
+                <aside class="left-grid" id="hidingLeft">
+                    <div class="marioVictory"></div>
+                    <div class="marioVictoryText">Mario <br>wins this round!!</div>
+                </aside>
 
-            <aside class="left-grid" id="hidingLeft">
-                <div class="marioVictory"></div>
-                <!-- <div class="marioVictoryText">Mario <br>wins this round!!</div> -->
-            </aside>
-            <div class="grid-flex">
-                <div class="grid">
-                    <div><button id= "cell1" data-square="1"></button></div>
-                    <div><button id= "cell2" data-square="2"></button></div>
-                    <div><button id= "cell3" data-square="3"></button></div>
-                    <div><button id= "cell4" data-square="4"></button></div>
-                    <div><button id= "cell5" data-square="5"></button></div>
-                    <div><button id= "cell6" data-square="6"></button></div>
-                    <div><button id= "cell7" data-square="7"></button></div>
-                    <div><button id= "cell8" data-square="8"></button></div>
-                    <div><button id= "cell9" data-square="9"></button></div>
+                <div class="grid-flex">
+                    <div class="grid">
+                        <div><button id= "cell1" data-square="1"></button></div>
+                        <div><button id= "cell2" data-square="2"></button></div>
+                        <div><button id= "cell3" data-square="3"></button></div>
+                        <div><button id= "cell4" data-square="4"></button></div>
+                        <div><button id= "cell5" data-square="5"></button></div>
+                        <div><button id= "cell6" data-square="6"></button></div>
+                        <div><button id= "cell7" data-square="7"></button></div>
+                        <div><button id= "cell8" data-square="8"></button></div>
+                        <div><button id= "cell9" data-square="9"></button></div>
+                    </div>
                 </div>
+
+                <aside class="right-grid" id="hidingRight">
+                    <div class="bowserVictoryText">Bowser wins this round!!</div>
+                    <div class="bowserVictory"></div>
+                </aside>
             </div>
-            <!-- <aside class="right-grid" id="hidingRight">
-                <div class="bowserVictoryText">Bowser wins this round!!</div>
-                <div class="bowserVictory"></div>
-            </aside> -->
+
+            <section class= "buttons">
+                <p class="victory-text"></p>
+                <button class="next-round">Next Round</button>
+                <button class="reset-Btn">Reset</button>
+            </section>
+
+            <footer class="stands">
+                <div>
+                    <!-- <img src="images/mario-pixelated.png" alt="" class="marioStand"> -->
+                    <!-- <img src="images/mario-byebye.png" alt="" id="marioWin"> -->
+                </div>
+                <div>
+                    <!-- <img src="images/bowser-pixelated.png" alt="" class="bowserStand"> -->
+                    <!-- <img src="images/bowser-byebye.gif" alt="" id="bowserWin"> -->
+                </div>
+            </footer>
+
 
     </div>
 
