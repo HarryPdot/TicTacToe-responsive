@@ -41,6 +41,7 @@ header {
 	align-content: center;
 	justify-content: center;
 }
+
 .grid {
 	width: 35vh;
 	height: 35vh;
@@ -58,7 +59,14 @@ header {
 	background-color: transparent;
 }
 
-/* .grid div:nth-child(1),
+.grid div button {
+	width: 12vh;
+	height: 12vh;
+	background-color: transparent;
+	border: none;
+}
+
+.grid div:nth-child(1),
 .grid div:nth-child(2), 
 .grid div:nth-child(3) {
 	border-top: none;
@@ -80,4 +88,6 @@ header {
 .grid div:nth-child(8), 
 .grid div:nth-child(9) {
 	border-bottom: none;
-} */
+}
+
+
