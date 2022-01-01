@@ -1,4 +1,4 @@
-https://harrypdot.github.io/Tic-Tac-Toe/
+https://harrypdot.github.io/TicTacToe-responsive/
 
 Desktop Only (1920x1080 resolution)
 
