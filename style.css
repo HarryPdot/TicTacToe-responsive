@@ -1,0 +1,83 @@
+* {
+	box-sizing: border-box;
+}
+
+html, 
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	background-image: url(images/mario-background.png);
+	height: 100vh;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+}
+
+
+
+header {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	width: 100%;
+	color: rgb(238, 44, 44);
+	font-size: 5vh; /* media to have it smaller when small phone*/
+	
+}
+
+.title {
+	margin-top: 20px;
+}
+
+
+
+/* grid */
+
+.grid-flex{
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
+.grid {
+	width: 35vh;
+	height: 35vh;
+	display: grid;
+	align-content: center;
+	justify-content: center;
+	grid-template-columns: repeat(3, auto)
+}
+
+.grid div {
+	width: 12vh;
+	height: 12vh;
+	border: 1px solid black;
+    cursor:pointer;
+	background-color: transparent;
+}
+
+/* .grid div:nth-child(1),
+.grid div:nth-child(2), 
+.grid div:nth-child(3) {
+	border-top: none;
+}
+
+.grid div:nth-child(1), 
+.grid div:nth-child(4), 
+.grid div:nth-child(7) {
+	border-left: none;
+}
+
+.grid div:nth-child(3), 
+.grid div:nth-child(6), 
+.grid div:nth-child(9) {
+	border-right: none;
+}
+
+.grid div:nth-child(7), 
+.grid div:nth-child(8), 
+.grid div:nth-child(9) {
+	border-bottom: none;
+} */

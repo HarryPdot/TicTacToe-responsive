@@ -1,0 +1,452 @@
+/* Font */
+
+
+@-webkit-keyframes scale-up-center {
+	0% {
+	  -webkit-transform: scale(0.5);
+			  transform: scale(0.5);
+	}
+	100% {
+	  -webkit-transform: scale(1);
+			  transform: scale(1);
+	}
+  }
+@keyframes scale-up-center {
+	0% {
+	  -webkit-transform: scale(0.5);
+			  transform: scale(0.5);
+	}
+	100% {
+	  -webkit-transform: scale(1);
+			  transform: scale(1);
+	}
+  }
+  
+@-webkit-keyframes flip-vertical-right {
+	0% {
+	  -webkit-transform: rotateY(0);
+			  transform: rotateY(0);
+	}
+	100% {
+	  -webkit-transform: rotateY(180deg);
+			  transform: rotateY(180deg);
+	}
+  }
+@keyframes flip-vertical-right {
+	0% {
+	  -webkit-transform: rotateY(0);
+			  transform: rotateY(0);
+	}
+	100% {
+	  -webkit-transform: rotateY(180deg);
+			  transform: rotateY(180deg);
+	}
+  }
+  
+@-webkit-keyframes scale-down-center {
+	0% {
+	  -webkit-transform: scale(1);
+			  transform: scale(1);
+	}
+	100% {
+	  -webkit-transform: scale(0.5);
+			  transform: scale(0.5);
+	}
+  }
+
+@-webkit-keyframes scale-down-bottom {
+	0% {
+	  -webkit-transform: scale(1);
+			  transform: scale(1);
+	  -webkit-transform-origin: 50% 100%;
+			  transform-origin: 50% 100%;
+	}
+	100% {
+	  -webkit-transform: scale(0.5);
+			  transform: scale(0.5);
+	  -webkit-transform-origin: 50% 100%;
+			  transform-origin: 50% 100%;
+	}
+  }
+@keyframes scale-down-bottom {
+	0% {
+	  -webkit-transform: scale(1);
+			  transform: scale(1);
+	  -webkit-transform-origin: 50% 100%;
+			  transform-origin: 50% 100%;
+	}
+	100% {
+	  -webkit-transform: scale(0.5);
+			  transform: scale(0.5);
+	  -webkit-transform-origin: 50% 100%;
+			  transform-origin: 50% 100%;
+			  opacity: 0;
+	}
+  }
+  
+* {
+    /* border: 1px solid blue; */
+	box-sizing: border-box;
+}
+
+html, 
+body {
+	margin: 0;
+	padding: 0;
+	background-color: rgb(106,136,253);
+}
+
+.container {
+    width: 100%;
+}
+
+/* title */
+.title {
+    text-align: center;
+    margin-bottom: 50px;
+	font-family: 'Super Mario Bros Alphabet', sans-serif;
+	font-size: 62px;
+
+	margin-bottom: 25px;
+	color: rgb(238, 44, 44);
+}
+
+
+.grid div button {
+	width: 100px;
+	height: 100px;
+	background-color: transparent;
+	border: none;
+}
+
+.three-sections {
+	display: grid;
+	grid-template-columns: 5fr 3fr 5fr;
+}
+
+/* grid */
+.grid {
+	width: 100%;
+	height: 100%;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	justify-items: center;
+	align-items: center;
+	grid-template-columns: repeat(3, auto)
+}
+
+.grid div {
+	width: 100px;
+	height: 100px;
+	border: 1px solid black;
+    cursor:pointer;
+	background-color: transparent;
+}
+
+
+.grid div:nth-child(1),
+.grid div:nth-child(2), 
+.grid div:nth-child(3) {
+	border-top: none;
+}
+
+.grid div:nth-child(1), 
+.grid div:nth-child(4), 
+.grid div:nth-child(7) {
+	border-left: none;
+}
+
+.grid div:nth-child(3), 
+.grid div:nth-child(6), 
+.grid div:nth-child(9) {
+	border-right: none;
+}
+
+.grid div:nth-child(7), 
+.grid div:nth-child(8), 
+.grid div:nth-child(9) {
+	border-bottom: none;
+}
+
+/* reset button */
+.reset-Btn, 
+.next-round {
+    text-align: center;
+    width: 200px;
+    height: 40px;
+	cursor:pointer;
+	background-color: rgba(190,0,95,0.7);
+	border:none;
+	color: white;
+	font-weight:600;
+	border-radius: 5px;
+}
+
+.next-round:hover {
+	background-color: rgb(190,0,95);
+	transition: 0.3s;
+}
+
+.reset-Btn {
+	display: none;
+
+}
+
+.next-round {
+	visibility: hidden;
+}
+
+section {
+    text-align: center;
+}
+
+
+/* game images */ 
+.bgimg{
+	background-image: url(images/mario-background.png);
+	background-repeat: no-repeat;
+	width: 1900px;
+	height: 760px;
+	background-size: contain;
+}
+
+#cell1 {
+	width: 100%;
+}
+
+.marioImg {
+	background-image: url(images/mario.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 100px;
+	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	
+	
+}
+
+.bowserImg {
+	background-image: url(images/bowser.png);
+	height: 100px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.marioVictory {
+	background-image: url(images/mario-victory.png);
+	width: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.marioVictoryText {
+	font-size: 50px;
+	text-align: center;
+	padding-top: 50px;
+	font-weight: bold;
+}
+
+.left-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	visibility: hidden;
+}
+
+.bowserVictory {
+	background-image: url(images/bowser-victory.png);
+	width: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+
+}
+
+.bowserVictoryText {
+	font-size: 50px;
+	text-align: center;
+	padding-top: 50px;
+	font-weight: bold;
+	-webkit-animation: flip-2-ver-left-fwd 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	animation: flip-2-ver-left-fwd 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+.right-grid {
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	visibility:hidden;
+}
+
+.stands {
+	height:135px;
+	margin-top: 115px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.marioStand {
+	height: 135px;
+	margin-left: 0px;
+
+}
+
+.bowserStand {
+	height: 135px;
+	margin-left: 800px;
+} 
+
+
+/* #dice-Btn {
+	background-image: url(images/mario-cube.png);
+	position: absolute;
+	display: inline-block;
+	height: 200px;
+	width: 200px;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	top: 300px;
+	left: 850px;
+	cursor:pointer;
+	display:none;
+} */
+
+.dice {
+	background-image: url(images/mario-cube.png);
+	position: absolute;
+	display: inline-block;
+	height: 350px;
+	width: 350px;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	top: 130px;
+	left: 771px;
+	-webkit-animation: flip-vertical-right 200ms cubic-bezier(0.455, 0.030, 0.515, 0.955) 10 both;
+	        animation: flip-vertical-right 200ms cubic-bezier(0.455, 0.030, 0.515, 0.955) 10 both;
+	animation-iteration-count: 10;
+
+}
+
+.marioPlusOne {
+	background-image: url(images/mario-plusOne.png);
+	position: absolute;
+	display: inline-block;
+	height: 350px;
+	width: 350px;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	top: 130px;
+	left: 771px;
+	background-color:rgb(242,204,9);
+	border-left: 10px solid rgb(157,136,6);
+	border-top: 10px solid rgb(253,243,12);
+	border-right: 10px solid rgb(244,226,10);
+	border-bottom: 10px solid rgb(107,74,3);
+	border-radius: 5px;
+}
+
+.bowserPlusOne {
+	background-image: url(images/bowser-plusOne.png);
+	position: absolute;
+	display: inline-block;
+	height: 350px;
+	width: 350px;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	top: 130px;
+	left: 771px;
+	background-color:rgb(242,204,9);
+	border-left: 10px solid rgb(157,136,6);
+	border-top: 10px solid rgb(253,243,12);
+	border-right: 10px solid rgb(244,226,10);
+	border-bottom: 10px solid rgb(107,74,3);
+	border-radius: 5px;
+}
+
+.marioMinusOne {
+	background-image: url(images/mario-minusOne.png);
+	position: absolute;
+	display: inline-block;
+	height: 350px;
+	width: 350px;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	top: 130px;
+	left: 771px;
+	background-color:rgb(242,204,9);
+	border-left: 10px solid rgb(157,136,6);
+	border-top: 10px solid rgb(253,243,12);
+	border-right: 10px solid rgb(244,226,10);
+	border-bottom: 10px solid rgb(107,74,3);
+	border-radius: 5px;
+}
+
+.bowserMinusOne {
+	background-image: url(images/bowser-minusOne.png);
+	position: absolute;
+	display: inline-block;
+	height: 350px;
+	width: 350px;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	top: 130px;
+	left: 771px;
+	background-color:rgb(242,204,9);
+	border-left: 10px solid rgb(157,136,6);
+	border-top: 10px solid rgb(253,243,12);
+	border-right: 10px solid rgb(244,226,10);
+	border-bottom: 10px solid rgb(107,74,3);
+	border-radius: 5px;
+}
+
+
+#marioWin {
+	height: 130px;
+	position: absolute;
+	left: 900px;
+	-webkit-animation: scale-down-bottom 2s linear both;
+	animation: scale-down-bottom 2s linear both;
+	display:none;
+}
+
+#bowserWin {
+	height: 130px;
+	position: absolute;
+	left: 880px;
+	-webkit-animation: scale-down-bottom 2s linear both;
+	animation: scale-down-bottom 2s linear both;
+	display:none;
+}
+
+
+.musicPlay {
+	background-image: url(images/playbutton.png);
+	position: absolute;
+	top: 55px;
+	left: 10px;
+	width: 20px;
+	height: 20px;
+	background-size: contain;
+	background-color: transparent;
+	border:none;
+}
+
+.musicPause {
+	background-image: url(images/pausebutton.png);
+	position: absolute;
+	top: 55px;
+	left: 35px;
+	width: 20px;
+	height: 20px;
+	background-size: contain;
+	background-color: transparent;
+	border:none;
+}
