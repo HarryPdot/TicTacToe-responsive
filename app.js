@@ -204,11 +204,11 @@ function bowserWin() {
 
 //moving mario
 function moveMario1() {
-    let test1 = playerOne.scoreboard * 172
+    let test1 = playerOne.scoreboard * 9
     console.log("test", test1)
     let marginAdd = test1
     console.log("marginAdd", marginAdd)
-    moveMario.style.marginLeft = marginAdd+"px"
+    moveMario.style.left = marginAdd+"vw"
     moveMario.style.transition = "1.5s"
     moveMario.style.transitionTimingFunction ="steps(6,end)"
     nextRoundBtn.style.visibility = "hidden"
@@ -221,11 +221,11 @@ function moveMario1() {
 }
 //moving bowser
 function moveBowser1() {
-    let test1 = 800 - (playerTwo.scoreboard * 160)
+    let test1 = playerTwo.scoreboard * 9
     console.log("test", test1)
     let marginAdd = test1
     console.log("marginAdd", marginAdd)
-    moveBowser.style.marginLeft = marginAdd+"px"
+    moveBowser.style.right = marginAdd+"vw"
     moveBowser.style.transition = "1.5s"
     moveBowser.style.transitionTimingFunction ="steps(6,end)"
     nextRoundBtn.style.visibility = "hidden"
