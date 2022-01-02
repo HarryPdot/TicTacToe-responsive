@@ -4,9 +4,10 @@ var victoryText = document.querySelector(".victory-text")
 var nextRoundBtn = document.querySelector(".next-round")
 var marioVic = document.querySelector(".left-grid")
 var bowserVic = document.querySelector(".right-grid")
-var marioVicMobile = document.querySelector(".marioVictoryTextMobile")
-var bowserVicMobile = document.querySelector(".bowserVictoryTextMobile")
-
+var marioVicTextMobile = document.querySelector(".marioVictoryTextMobile")
+var bowserVicTextMobile = document.querySelector(".bowserVictoryTextMobile")
+var marioVictoryImageMobile = document.querySelector(".marioVictoryMobile")
+var bowserVictoryImageMobile = document.querySelector(".bowserVictoryMobile")
 var moveMario = document.querySelector(".marioStand")
 var moveBowser = document.querySelector(".bowserStand")
 var resetBtn = document.querySelector(".reset-Btn")
@@ -72,111 +73,119 @@ function handleTurns(event) {
         console.log("Player 1 wins with cells: 1, 2, 3")
         marioVic.style.visibility = "visible"
         playerOne.scoreboard = playerOne.scoreboard + 1
-        marioVicMobile.style.visibility = "visible"
+        marioVicTextMobile.style.display = "flex"
+        marioVictoryImageMobile.style.visibility= "visible"
         moveMario1()
         disableAll()
     } else if (playerOne.score.includes("cell1") && playerOne.score.includes("cell4") && playerOne.score.includes("cell7")) {
         console.log("Player 1 wins with cells: 1, 4, 7")
         marioVic.style.visibility = "visible"
         playerOne.scoreboard = playerOne.scoreboard + 1
-        marioVicMobile.style.visibility = "visible"
+        marioVicTextMobile.style.display = "flex"
+        marioVictoryImageMobile.style.visibility= "visible"
         moveMario1()
         disableAll()
     } else if (playerOne.score.includes("cell1") && playerOne.score.includes("cell5") && playerOne.score.includes("cell9")) {
         console.log("Player 1 wins with cells: 1, 5, 9")
         marioVic.style.visibility = "visible"
         playerOne.scoreboard = playerOne.scoreboard + 1
-        marioVicMobile.style.visibility = "visible"
+        marioVicTextMobile.style.display = "flex"
+        marioVictoryImageMobile.style.visibility= "visible"
         moveMario1()
         disableAll()
     } else if (playerOne.score.includes("cell2") && playerOne.score.includes("cell5") && playerOne.score.includes("cell8")) {
         console.log("Player 1 wins with cells: 2, 5, 8")
         marioVic.style.visibility = "visible"
         playerOne.scoreboard = playerOne.scoreboard + 1
-        marioVicMobile.style.visibility = "visible"
+        marioVicTextMobile.style.display = "flex"
+        marioVictoryImageMobile.style.visibility= "visible"
         moveMario1()
         disableAll()
     } else if (playerOne.score.includes("cell3") && playerOne.score.includes("cell5") && playerOne.score.includes("cell7")) {
         console.log("Player 1 wins with cells: 3, 5, 7")
         marioVic.style.visibility = "visible"
         playerOne.scoreboard = playerOne.scoreboard + 1
-        marioVicMobile.style.visibility = "visible"
+        marioVicTextMobile.style.display = "flex"
+        marioVictoryImageMobile.style.visibility= "visible"
         moveMario1()
         disableAll()
     } else if (playerOne.score.includes("cell3") && playerOne.score.includes("cell6") && playerOne.score.includes("cell9")) {
         console.log("Player 1 wins with cells: 3, 6, 9")
         marioVic.style.visibility = "visible"
         playerOne.scoreboard = playerOne.scoreboard + 1
-        marioVicMobile.style.visibility = "visible"
+        marioVicTextMobile.style.display = "flex"
+        marioVictoryImageMobile.style.visibility= "visible"
         moveMario1()
         disableAll() 
     } else if (playerOne.score.includes("cell4") && playerOne.score.includes("cell5") && playerOne.score.includes("cell6")) {
         console.log("Player 1 wins with cells: 4, 5, 6")
         marioVic.style.visibility = "visible"
         playerOne.scoreboard = playerOne.scoreboard + 1
-        marioVicMobile.style.visibility = "visible"
+        marioVicTextMobile.style.display = "flex"
+        marioVictoryImageMobile.style.visibility= "visible"
         moveMario1()
         disableAll()
     } else if (playerOne.score.includes("cell7") && playerOne.score.includes("cell8") && playerOne.score.includes("cell9")) {
         console.log("Player 1 wins with cells: 7, 8, 9")
         marioVic.style.visibility = "visible"
         playerOne.scoreboard = playerOne.scoreboard + 1
-        marioVicMobile.style.visibility = "visible"
+        marioVicTextMobile.style.display = "flex"
+        marioVictoryImageMobile.style.visibility= "visible"
         moveMario1()
         disableAll()
     } else if (playerTwo.score.includes("cell1") && playerTwo.score.includes("cell2") && playerTwo.score.includes("cell3")) {
         console.log("Player 2 wins with cells: 1, 2, 3")
         bowserVic.style.visibility = "visible"
-        bowserVicMobile.style.visibility = "visible"
+        bowserVicTextMobile.style.visibility = "visible"
         playerTwo.scoreboard = playerTwo.scoreboard + 1
         moveBowser1()
         disableAll()
     } else if (playerTwo.score.includes("cell1") && playerTwo.score.includes("cell4") && playerTwo.score.includes("cell7")) {
         console.log("Player 2 wins with cells: 1, 4, 7")
         bowserVic.style.visibility = "visible"
-        bowserVicMobile.style.visibility = "visible"
+        bowserVicTextMobile.style.visibility = "visible"
         playerTwo.scoreboard = playerTwo.scoreboard + 1
         moveBowser1()
         disableAll()
     } else if (playerTwo.score.includes("cell1") && playerTwo.score.includes("cell5") && playerTwo.score.includes("cell9")) {
         console.log("Player 2 wins with cells: 1, 5, 9")
         bowserVic.style.visibility = "visible"
-        bowserVicMobile.style.visibility = "visible"
+        bowserVicTextMobile.style.visibility = "visible"
         playerTwo.scoreboard = playerTwo.scoreboard + 1
         moveBowser1()
         disableAll()
     } else if (playerTwo.score.includes("cell2") && playerTwo.score.includes("cell5") && playerTwo.score.includes("cell8")) {
         console.log("Player 2 wins with cells: 2, 5, 8")
         bowserVic.style.visibility = "visible"
-        bowserVicMobile.style.visibility = "visible"
+        bowserVicTextMobile.style.visibility = "visible"
         playerTwo.scoreboard = playerTwo.scoreboard + 1
         moveBowser1()
         disableAll()
     } else if (playerTwo.score.includes("cell3") && playerTwo.score.includes("cell5") && playerTwo.score.includes("cell7")) {
         console.log("Player 2 wins with cells: 3, 5, 7")
         bowserVic.style.visibility = "visible"
-        bowserVicMobile.style.visibility = "visible"
+        bowserVicTextMobile.style.visibility = "visible"
         playerTwo.scoreboard = playerTwo.scoreboard + 1
         moveBowser1()
         disableAll()
     } else if (playerTwo.score.includes("cell3") && playerTwo.score.includes("cell6") && playerTwo.score.includes("cell9")) {
         console.log("Player 2 wins with cells: 3, 6, 9")
         bowserVic.style.visibility = "visible"
-        bowserVicMobile.style.visibility = "visible"
+        bowserVicTextMobile.style.visibility = "visible"
         playerTwo.scoreboard = playerTwo.scoreboard + 1
         moveBowser1()
         disableAll()
     } else if (playerTwo.score.includes("cell4") && playerTwo.score.includes("cell5") && playerTwo.score.includes("cell6")) {
         console.log("Player 2 wins with cells: 4, 5, 6")
         bowserVic.style.visibility = "visible"
-        bowserVicMobile.style.visibility = "visible"
+        bowserVicTextMobile.style.visibility = "visible"
         playerTwo.scoreboard = playerTwo.scoreboard + 1
         moveBowser1()
         disableAll()
     } else if (playerTwo.score.includes("cell7") && playerTwo.score.includes("cell8") && playerTwo.score.includes("cell9")) {
         console.log("Player 2 wins with cells: 7, 8, 9")
         bowserVic.style.visibility = "visible"
-        bowserVicMobile.style.visibility = "visible"
+        bowserVicTextMobile.style.visibility = "visible"
         playerTwo.scoreboard = playerTwo.scoreboard + 1
         moveBowser1()
         disableAll()
@@ -209,7 +218,7 @@ function handleTurns(event) {
 function marioWin() {
     setTimeout(function(){
         marioEnding.style.display= "inline-block";
-        moveMario.style.display="none"
+        moveMario.style.display= "none"
     }, 1500)
 }
 
@@ -217,7 +226,7 @@ function marioWin() {
 function bowserWin() {
     setTimeout(function(){
         bowserEnding.style.display= "inline-block";
-        moveBowser.style.display="none"
+        moveBowser.style.display= "none"
     }, 1500)
 }
 
@@ -277,8 +286,9 @@ function handleNextRound() {
         marioVic.style.visibility = "hidden"
         bowserVic.style.visibility = "hidden"
         nextRoundBtn.style.visibility = "hidden"
-        marioVicMobile.style.visibility = "hidden"
-        bowserVicMobile.style.visibility = "hidden"
+        marioVicTextMobile.style.display = "none"
+        bowserVicTextMobile.style.visibility = "hidden"
+        marioVictoryImageMobile.style.visibility ="hidden"
     }
     console.log("resetting to factory")
 }
@@ -303,6 +313,9 @@ function handleReset () {
         moveBowser.style.display = "inline-block"
         bowserEnding.style.display = "none"
         marioEnding.style.display = "none"
+        marioVicTextMobile.style.display = "none"
+        bowserVicTextMobile.style.visibility = "hidden"
+        marioVictoryImageMobile.style.visibility ="hidden"
         moveBowser1()
         moveMario1()
     }

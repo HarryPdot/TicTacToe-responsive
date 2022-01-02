@@ -121,6 +121,7 @@ header {
 	display: flex;
 	align-content: center;
 	justify-content: center;
+	margin-bottom: 3vh;
 }
 
 .grid {
@@ -187,7 +188,7 @@ header {
 	display: flex;
 	text-align: center;
 	justify-content: center;
-	visibility: hidden;
+	display: none;
 }
 
 .bowserVictoryTextMobile {
@@ -199,7 +200,6 @@ header {
 	text-align: center;
 	visibility: hidden;
 }
-
 
 /* no side grids when on mobile */
 .left-grid {
@@ -244,31 +244,85 @@ header {
 	visibility: hidden;
 }
 
+/* grid images */
+.marioImg {
+	background-image: url(images/mario.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 100px;
+	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.bowserImg {
+	background-image: url(images/bowser.png);
+	height: 100px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+
+
+
+
+
+
 /* removing features that mobile cant use */
-.marioStand {
-	display: none;
+
+@media (orientation: portrait) {
+	.playerWinsMobileGrid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 20vw;
+	}
+
+	#marioWin {
+		position: absolute;
+		visibility: hidden;
+		top:0;
+	}
+	
+	#bowserWin {
+		position: absolute;
+		visibility: hidden;
+		top:0;
+	}
+
+	.stands {
+		display: none;
+	}	
+
+	.marioVictoryMobile {
+		background-image: url(images/mario-victory.png);
+		height: 20vh;
+		background-size: contain;
+		background-repeat: no-repeat;
+		visibility: hidden;
+	}
+	
+	.bowserVictoryMobile {
+		background-image: url(images/bowser-victory.png);
+		height: 20vh;
+		background-size: contain;
+		background-repeat: no-repeat;
+		visibility: hidden;
+	}
 }
 
-.bowserStand {
-	display: none;
-}
-
-#marioWin {
-	display: none;
-}
-
-#bowserWin {
-	display: none;
-}
-
-
+/* for landscape users */
 @media (orientation: landscape) {
+
 	.title {
 		color: blue
 	}
-
+		
+	/* disabling some mobile features */
 	.marioVictoryTextMobile {
-		display: none;
+		visibility: hidden;
+		height: 0;
+		width: 0;
 	}
 
 	.bowserVictoryTextMobile {
@@ -280,6 +334,7 @@ header {
 		grid-template-columns: 5fr 3fr 5fr;
 		margin-bottom: auto;
 	}
+
 /* images when you when, and text */
 	.left-grid {
 		display: grid;
@@ -325,4 +380,52 @@ header {
 		align-items: center;
 		font-weight: bold;
 	}
+
+	/* move players when win */
+	.stands {
+		position: absolute;
+		bottom: 8vh;
+		width: 100vw;
+		display: grid;
+		height: 20vh;
+		grid-template-columns: 1fr 1fr;
+
+	}
+
+	.marioStand {
+		position: absolute;
+		height: 20vh;
+		left: 0vw;
+		visibility: visible;
+	}
+
+	.bowserStand {
+		position: absolute;
+		right: 0vw;
+		height: 20vh;
+		visibility: visible;
+	}
+
+	/* when a player wins 5 times */
+
+	#marioWin {
+		position: absolute;
+		height: 20vh;
+		left: 47vw;
+		-webkit-animation: scale-down-bottom 2s linear both;
+		animation: scale-down-bottom 2s linear both;
+		display:none;
+	}
+
+	#bowserWin {
+		position: absolute;
+		height: 20vh;
+		right: 44vw;
+		-webkit-animation: scale-down-bottom 2s linear both;
+		animation: scale-down-bottom 2s linear both;
+		display: none;
+	}
+
+
+
 }
