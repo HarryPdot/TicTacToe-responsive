@@ -116,6 +116,11 @@ function winConditions() {
                     moveBowser1()
                     disableAll()
                 }
+            } else if ((playerOne.score.length + playerTwo.score.length) == 9) {
+                console.log("draw")
+                nextRoundBtn.style.visibility = "hidden"
+                diceBtn.className="dice"
+                setTimeout(dice,2000)
             }
         }
         marioWinCondition = ""
@@ -123,13 +128,7 @@ function winConditions() {
 
     })
 
-    // when the game draws
-    if ((playerOne.score.length + playerTwo.score.length) == 9) {
-        console.log("draw")
-        nextRoundBtn.style.visibility = "hidden"
-        diceBtn.className="dice"
-        setTimeout(dice,2000)
-    }
+
 
     //when a player gets 5 wins
     if(playerOne.scoreboard === 5) {
