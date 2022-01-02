@@ -1,7 +1,7 @@
 /* Font */
 
 
-@-webkit-keyframes scale-up-center {
+/* @-webkit-keyframes scale-up-center {
 	0% {
 	  -webkit-transform: scale(0.5);
 			  transform: scale(0.5);
@@ -82,7 +82,7 @@
 			  transform-origin: 50% 100%;
 			  opacity: 0;
 	}
-  }
+  } */
 
 
 
@@ -105,31 +105,18 @@ body {
 	background-size: auto 100%;
 }
 
-
-
 header {
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
 	width: 100%;
 	color: rgb(238, 44, 44);
-	font-size: 5vh; /* media to have it smaller when small phone*/
+	font-size: 3vh; /* media to have it smaller when small phone*/
 	
 }
 
-.title {
-	margin-top: 20px;
-}
 
-
-.three-sections {
-	display: grid;
-	grid-template-columns: 5fr 3fr 5fr;
-	margin-bottom: auto;
-}
-
-/* grid */
-
+/* grid of the game */
 .grid-flex{
 	display: flex;
 	align-content: center;
@@ -184,52 +171,44 @@ header {
 	border-bottom: none;
 }
 
-/* images when you when, and text */
-.left-grid {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	visibility: hidden;
-}
-
-.marioVictory {
-	background-image: url(images/mario-victory.png);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 38vh;
-	background-size: contain;
-	background-repeat: no-repeat;
-}
-
+/* when a players wins a round */
 .marioVictoryText {
-	font-size: 6vh;
-	display: flex;
-	align-items: center;
-	font-weight: bold;
-}
-
-.right-grid {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	visibility: hidden;
-}
-
-.bowserVictory {
-	background-image: url(images/bowser-victory.png);
-	display: flex;
-	justify-content: center;
-	height: 38vh;
-	background-size: contain;
-	background-repeat: no-repeat;
+	display: none;
 }
 
 .bowserVictoryText {
-	font-size: 6vh;
-	display: flex;
-	align-items: center;
-	font-weight: bold;
+	display: none;
 }
 
+.marioVictoryTextMobile {
+	color: red;
+	font-weight: bold;
+	font-size: 4vh;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	visibility: hidden;
+}
+
+.bowserVictoryTextMobile {
+	color: red;
+	font-weight: bold;
+	font-size: 4vh;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	visibility: hidden;
+}
+
+
+/* no side grids when on mobile */
+.left-grid {
+	display: none;
+}
+
+.right-grid {
+	display: none;
+}
 
 /*buttons to reset, and go next round*/
 .buttons {
@@ -265,146 +244,85 @@ header {
 	visibility: hidden;
 }
 
-
-/* grid images */
-.marioImg {
-	background-image: url(images/mario.png);
-	background-size: contain;
-	background-repeat: no-repeat;
-	height: 100px;
-	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-	animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-}
-
-.bowserImg {
-	background-image: url(images/bowser.png);
-	height: 100px;
-	background-size: contain;
-	background-repeat: no-repeat;
-	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-	animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-}
-
-
-/* stands, characters move, 45vw to get to center */
-.stands {
-	position: absolute;
-	bottom: 8vh;
-	width: 100vw;
-	display: grid;
-	height: 20vh;
-	grid-template-columns: 1fr 1fr;
-}
-
+/* removing features that mobile cant use */
 .marioStand {
-	position: absolute;
-	height: 20vh;
-	left: 0vw;
+	display: none;
 }
 
 .bowserStand {
-	position: absolute;
-	right: 0vw;
-	height: 20vh;
+	display: none;
 }
 
-/* when a player wins 5 times */
-
 #marioWin {
-	position: absolute;
-	height: 20vh;
-	left: 47vw;
-	-webkit-animation: scale-down-bottom 2s linear both;
-	animation: scale-down-bottom 2s linear both;
-	display:none;
+	display: none;
 }
 
 #bowserWin {
-	position: absolute;
-	height: 20vh;
-	right: 46vw;
-	-webkit-animation: scale-down-bottom 2s linear both;
-	animation: scale-down-bottom 2s linear both;
 	display: none;
 }
 
 
-/* dice when you draw */
-.dice {
-	background-image: url(images/mario-cube.png);
-	position: absolute;
-	display: inline-block;
-	height: 38vh;
-	width: 38vh;
-	background-position: center;
-	background-size: contain;
-	background-repeat: no-repeat;
-	-webkit-animation: flip-vertical-right 200ms cubic-bezier(0.455, 0.030, 0.515, 0.955) 10 both;
-	animation: flip-vertical-right 200ms cubic-bezier(0.455, 0.030, 0.515, 0.955) 10 both;
-	animation-iteration-count: 10;
-}
+@media (orientation: landscape) {
+	.title {
+		color: blue
+	}
 
-.marioPlusOne {
-	background-image: url(images/mario-plusOne.png);
-	position: absolute;
-	height: 38vh;
-	width: 38vh;
-	background-position: center;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-color:rgb(242,204,9);
-	border-left: 10px solid rgb(157,136,6);
-	border-top: 10px solid rgb(253,243,12);
-	border-right: 10px solid rgb(244,226,10);
-	border-bottom: 10px solid rgb(107,74,3);
-	border-radius: 5px;
-}
+	.marioVictoryTextMobile {
+		display: none;
+	}
 
-.bowserPlusOne {
-	background-image: url(images/bowser-plusOne.png);
-	position: absolute;
-	height: 38vh;
-	width: 38vh;
-	background-position: center;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-color:rgb(242,204,9);
-	border-left: 10px solid rgb(157,136,6);
-	border-top: 10px solid rgb(253,243,12);
-	border-right: 10px solid rgb(244,226,10);
-	border-bottom: 10px solid rgb(107,74,3);
-	border-radius: 5px;
-}
+	.bowserVictoryTextMobile {
+		display: none;
+	}
 
-.marioMinusOne {
-	background-image: url(images/mario-minusOne.png);
-	position: absolute;
-	display: inline-block;
-	height: 38vh;
-	width: 38vh;
-	background-position: center;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-color:rgb(242,204,9);
-	border-left: 10px solid rgb(157,136,6);
-	border-top: 10px solid rgb(253,243,12);
-	border-right: 10px solid rgb(244,226,10);
-	border-bottom: 10px solid rgb(107,74,3);
-	border-radius: 5px;
-}
+	.three-sections {
+		display: grid;
+		grid-template-columns: 5fr 3fr 5fr;
+		margin-bottom: auto;
+	}
+/* images when you when, and text */
+	.left-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		visibility: hidden;
+	}
+	
+	.marioVictory {
+		background-image: url(images/mario-victory.png);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 38vh;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+	
+	.marioVictoryText {
+		font-size: 6vh;
+		display: flex;
+		align-items: center;
+		font-weight: bold;
+	}
 
-.bowserMinusOne {
-	background-image: url(images/bowser-minusOne.png);
-	position: absolute;
-	display: inline-block;
-	height: 38vh;
-	width: 38vh;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-color:rgb(242,204,9);
-	border-left: 10px solid rgb(157,136,6);
-	border-top: 10px solid rgb(253,243,12);
-	border-right: 10px solid rgb(244,226,10);
-	border-bottom: 10px solid rgb(107,74,3);
-	border-radius: 5px;
+	.right-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		visibility: hidden;
+	}
+
+	.bowserVictory {
+		background-image: url(images/bowser-victory.png);
+		display: flex;
+		justify-content: center;
+		height: 38vh;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+
+	.bowserVictoryText {
+		font-size: 6vh;
+		display: flex;
+		align-items: center;
+		font-weight: bold;
+	}
 }

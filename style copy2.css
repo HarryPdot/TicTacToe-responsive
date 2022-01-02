@@ -1,0 +1,321 @@
+* {
+	box-sizing: border-box;
+}
+
+html, 
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	background-image: url(images/mario-background.png);
+	height: 100vh;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+}
+
+
+
+header {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	width: 100%;
+	color: rgb(238, 44, 44);
+	font-size: 5vh; /* media to have it smaller when small phone*/
+	
+}
+
+.title {
+	margin-top: 20px;
+}
+
+
+.three-sections {
+	display: grid;
+	grid-template-columns: 5fr 3fr 5fr;
+	margin-bottom: auto;
+}
+
+/* grid */
+
+.grid-flex{
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
+
+.grid {
+	width: 35vh;
+	height: 35vh;
+	display: grid;
+	align-content: center;
+	justify-content: center;
+	grid-template-columns: repeat(3, auto)
+}
+
+.grid div {
+	width: 12vh;
+	height: 12vh;
+	border: 1px solid black;
+    cursor:pointer;
+	background-color: transparent;
+}
+
+.grid div button {
+	width: 12vh;
+	height: 12vh;
+	background-color: transparent;
+	border: none;
+}
+
+.grid div:nth-child(1),
+.grid div:nth-child(2), 
+.grid div:nth-child(3) {
+	border-top: none;
+}
+
+.grid div:nth-child(1), 
+.grid div:nth-child(4), 
+.grid div:nth-child(7) {
+	border-left: none;
+}
+
+.grid div:nth-child(3), 
+.grid div:nth-child(6), 
+.grid div:nth-child(9) {
+	border-right: none;
+}
+
+.grid div:nth-child(7), 
+.grid div:nth-child(8), 
+.grid div:nth-child(9) {
+	border-bottom: none;
+}
+
+/* images when you when, and text */
+.left-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	visibility: hidden;
+}
+
+.marioVictory {
+	background-image: url(images/mario-victory.png);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 38vh;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.marioVictoryText {
+	font-size: 6vh;
+	display: flex;
+	align-items: center;
+	font-weight: bold;
+}
+
+.right-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	visibility: hidden;
+}
+
+.bowserVictory {
+	background-image: url(images/bowser-victory.png);
+	display: flex;
+	justify-content: center;
+	height: 38vh;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.bowserVictoryText {
+	font-size: 6vh;
+	display: flex;
+	align-items: center;
+	font-weight: bold;
+}
+
+
+/*buttons to reset, and go next round*/
+.buttons {
+	display: flex;
+	justify-content: center;
+	height: 5vh;
+	margin-bottom: auto;
+}
+
+.reset-Btn, 
+.next-round {
+    text-align: center;
+    height: 5vh;
+	cursor:pointer;
+	background-color: rgba(190,0,95,0.7);
+	border:none;
+	color: white;
+	font-weight:600;
+	border-radius: 5px;
+}
+
+.next-round:hover,
+.reset-Btn:hover {
+	background-color: rgb(190,0,95);
+	transition: 0.3s;
+}
+
+.reset-Btn {
+	display: none;
+}
+
+.next-round {
+	visibility: hidden;
+}
+
+
+/* grid images */
+.marioImg {
+	background-image: url(images/mario.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 100px;
+	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.bowserImg {
+	background-image: url(images/bowser.png);
+	height: 100px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+
+/* stands, characters move, 45vw to get to center */
+.stands {
+	position: absolute;
+	bottom: 8vh;
+	width: 100vw;
+	display: grid;
+	height: 20vh;
+	grid-template-columns: 1fr 1fr;
+}
+
+.marioStand {
+	position: absolute;
+	height: 20vh;
+	left: 0vw;
+}
+
+.bowserStand {
+	position: absolute;
+	right: 0vw;
+	height: 20vh;
+}
+
+/* when a player wins 5 times */
+
+#marioWin {
+	position: absolute;
+	height: 20vh;
+	left: 47vw;
+	-webkit-animation: scale-down-bottom 2s linear both;
+	animation: scale-down-bottom 2s linear both;
+	display:none;
+}
+
+#bowserWin {
+	position: absolute;
+	height: 20vh;
+	right: 46vw;
+	-webkit-animation: scale-down-bottom 2s linear both;
+	animation: scale-down-bottom 2s linear both;
+	display: none;
+}
+
+
+/* dice when you draw */
+.dice {
+	background-image: url(images/mario-cube.png);
+	position: absolute;
+	display: inline-block;
+	height: 38vh;
+	width: 38vh;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	-webkit-animation: flip-vertical-right 200ms cubic-bezier(0.455, 0.030, 0.515, 0.955) 10 both;
+	animation: flip-vertical-right 200ms cubic-bezier(0.455, 0.030, 0.515, 0.955) 10 both;
+	animation-iteration-count: 10;
+}
+
+.marioPlusOne {
+	background-image: url(images/mario-plusOne.png);
+	position: absolute;
+	height: 38vh;
+	width: 38vh;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-color:rgb(242,204,9);
+	border-left: 10px solid rgb(157,136,6);
+	border-top: 10px solid rgb(253,243,12);
+	border-right: 10px solid rgb(244,226,10);
+	border-bottom: 10px solid rgb(107,74,3);
+	border-radius: 5px;
+}
+
+.bowserPlusOne {
+	background-image: url(images/bowser-plusOne.png);
+	position: absolute;
+	height: 38vh;
+	width: 38vh;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-color:rgb(242,204,9);
+	border-left: 10px solid rgb(157,136,6);
+	border-top: 10px solid rgb(253,243,12);
+	border-right: 10px solid rgb(244,226,10);
+	border-bottom: 10px solid rgb(107,74,3);
+	border-radius: 5px;
+}
+
+.marioMinusOne {
+	background-image: url(images/mario-minusOne.png);
+	position: absolute;
+	display: inline-block;
+	height: 38vh;
+	width: 38vh;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-color:rgb(242,204,9);
+	border-left: 10px solid rgb(157,136,6);
+	border-top: 10px solid rgb(253,243,12);
+	border-right: 10px solid rgb(244,226,10);
+	border-bottom: 10px solid rgb(107,74,3);
+	border-radius: 5px;
+}
+
+.bowserMinusOne {
+	background-image: url(images/bowser-minusOne.png);
+	position: absolute;
+	display: inline-block;
+	height: 38vh;
+	width: 38vh;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-color:rgb(242,204,9);
+	border-left: 10px solid rgb(157,136,6);
+	border-top: 10px solid rgb(253,243,12);
+	border-right: 10px solid rgb(244,226,10);
+	border-bottom: 10px solid rgb(107,74,3);
+	border-radius: 5px;
+}
