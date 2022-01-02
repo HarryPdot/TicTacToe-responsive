@@ -16,8 +16,3 @@ An improved game from previous version, this game is now reposive to both orient
 - designed to play in both landscape and portrait
 - both orientation has different features, where portrait has less room for features some interactions had to be removed
 
-## Unsolved problems
-- there are some parts of javascript functions that can be shortened to make it easier to read. One of them is the winning conditions where everything was basically hard coded to work.
-
-
-

@@ -83,6 +83,12 @@ function handleTurns(event) {
 
     counterTurn = counterTurn + 1
 
+    winConditions()
+
+
+}
+
+function winConditions() {
     winningConditions.forEach(function(conditions) {
         console.log("Conditions")
         for(var i=0; i < conditions.length; i++) {
@@ -117,166 +123,13 @@ function handleTurns(event) {
 
     })
 
+    // when the game draws
     if ((playerOne.score.length + playerTwo.score.length) == 9) {
         console.log("draw")
         nextRoundBtn.style.visibility = "hidden"
         diceBtn.className="dice"
         setTimeout(dice,2000)
     }
-
-    //win conditions
-    // if (playerOne.score.includes("cell1") && playerOne.score.includes("cell2") && playerOne.score.includes("cell3")) {
-    //     console.log("Player 1 wins with cells: 1, 2, 3")
-    //     marioVic.style.visibility = "visible"
-    //     playerOne.scoreboard = playerOne.scoreboard + 1
-    //     marioScoreMobile.textContent = playerOne.scoreboard
-    //     marioVicTextMobile.style.display = "flex"
-    //     marioVictoryImageMobile.style.visibility= "visible"
-    //     moveMario1()
-    //     disableAll()
-    // } else if (playerOne.score.includes("cell1") && playerOne.score.includes("cell4") && playerOne.score.includes("cell7")) {
-    //     console.log("Player 1 wins with cells: 1, 4, 7")
-    //     marioVic.style.visibility = "visible"
-    //     playerOne.scoreboard = playerOne.scoreboard + 1
-    //     marioScoreMobile.textContent = playerOne.scoreboard
-    //     marioVicTextMobile.style.display = "flex"
-    //     marioVictoryImageMobile.style.visibility= "visible"
-    //     moveMario1()
-    //     disableAll()
-    // } else if (playerOne.score.includes("cell1") && playerOne.score.includes("cell5") && playerOne.score.includes("cell9")) {
-    //     console.log("Player 1 wins with cells: 1, 5, 9")
-    //     marioVic.style.visibility = "visible"
-    //     playerOne.scoreboard = playerOne.scoreboard + 1
-    //     marioScoreMobile.textContent = playerOne.scoreboard
-    //     marioVicTextMobile.style.display = "flex"
-    //     marioVictoryImageMobile.style.visibility= "visible"
-    //     moveMario1()
-    //     disableAll()
-    // } else if (playerOne.score.includes("cell2") && playerOne.score.includes("cell5") && playerOne.score.includes("cell8")) {
-    //     console.log("Player 1 wins with cells: 2, 5, 8")
-    //     marioVic.style.visibility = "visible"
-    //     playerOne.scoreboard = playerOne.scoreboard + 1
-    //     marioScoreMobile.textContent = playerOne.scoreboard
-    //     marioVicTextMobile.style.display = "flex"
-    //     marioVictoryImageMobile.style.visibility= "visible"
-    //     moveMario1()
-    //     disableAll()
-    // } else if (playerOne.score.includes("cell3") && playerOne.score.includes("cell5") && playerOne.score.includes("cell7")) {
-    //     console.log("Player 1 wins with cells: 3, 5, 7")
-    //     marioVic.style.visibility = "visible"
-    //     playerOne.scoreboard = playerOne.scoreboard + 1
-    //     marioScoreMobile.textContent = playerOne.scoreboard
-    //     marioVicTextMobile.style.display = "flex"
-    //     marioVictoryImageMobile.style.visibility= "visible"
-    //     moveMario1()
-    //     disableAll()
-    // } else if (playerOne.score.includes("cell3") && playerOne.score.includes("cell6") && playerOne.score.includes("cell9")) {
-    //     console.log("Player 1 wins with cells: 3, 6, 9")
-    //     marioVic.style.visibility = "visible"
-    //     playerOne.scoreboard = playerOne.scoreboard + 1
-    //     marioScoreMobile.textContent = playerOne.scoreboard
-    //     marioVicTextMobile.style.display = "flex"
-    //     marioVictoryImageMobile.style.visibility= "visible"
-    //     moveMario1()
-    //     disableAll() 
-    // } else if (playerOne.score.includes("cell4") && playerOne.score.includes("cell5") && playerOne.score.includes("cell6")) {
-    //     console.log("Player 1 wins with cells: 4, 5, 6")
-    //     marioVic.style.visibility = "visible"
-    //     playerOne.scoreboard = playerOne.scoreboard + 1
-    //     marioScoreMobile.textContent = playerOne.scoreboard
-    //     marioVicTextMobile.style.display = "flex"
-    //     marioVictoryImageMobile.style.visibility= "visible"
-    //     moveMario1()
-    //     disableAll()
-    // } else if (playerOne.score.includes("cell7") && playerOne.score.includes("cell8") && playerOne.score.includes("cell9")) {
-    //     console.log("Player 1 wins with cells: 7, 8, 9")
-    //     marioVic.style.visibility = "visible"
-    //     playerOne.scoreboard = playerOne.scoreboard + 1
-    //     marioScoreMobile.textContent = playerOne.scoreboard
-    //     marioVicTextMobile.style.display = "flex"
-    //     marioVictoryImageMobile.style.visibility= "visible"
-    //     moveMario1()
-    //     disableAll()
-    // } else if (playerTwo.score.includes("cell1") && playerTwo.score.includes("cell2") && playerTwo.score.includes("cell3")) {
-    //     console.log("Player 2 wins with cells: 1, 2, 3")
-    //     bowserVic.style.visibility = "visible"
-    //     bowserVicTextMobile.style.visibility = "visible"
-    //     bowserVictoryImageMobile.style.visibility = "visible"
-    //     playerTwo.scoreboard = playerTwo.scoreboard + 1
-    //     bowserScoreMobile.textContent = playerTwo.scoreboard
-    //     moveBowser1()
-    //     disableAll()
-    // } else if (playerTwo.score.includes("cell1") && playerTwo.score.includes("cell4") && playerTwo.score.includes("cell7")) {
-    //     console.log("Player 2 wins with cells: 1, 4, 7")
-    //     bowserVic.style.visibility = "visible"
-    //     bowserVicTextMobile.style.visibility = "visible"
-    //     bowserVictoryImageMobile.style.visibility = "visible"
-    //     playerTwo.scoreboard = playerTwo.scoreboard + 1
-    //     bowserScoreMobile.textContent = playerTwo.scoreboard
-    //     moveBowser1()
-    //     disableAll()
-    // } else if (playerTwo.score.includes("cell1") && playerTwo.score.includes("cell5") && playerTwo.score.includes("cell9")) {
-    //     console.log("Player 2 wins with cells: 1, 5, 9")
-    //     bowserVic.style.visibility = "visible"
-    //     bowserVicTextMobile.style.visibility = "visible"
-    //     bowserVictoryImageMobile.style.visibility = "visible"
-    //     playerTwo.scoreboard = playerTwo.scoreboard + 1
-    //     bowserScoreMobile.textContent = playerTwo.scoreboard
-    //     moveBowser1()
-    //     disableAll()
-    // } else if (playerTwo.score.includes("cell2") && playerTwo.score.includes("cell5") && playerTwo.score.includes("cell8")) {
-    //     console.log("Player 2 wins with cells: 2, 5, 8")
-    //     bowserVic.style.visibility = "visible"
-    //     bowserVicTextMobile.style.visibility = "visible"
-    //     bowserVictoryImageMobile.style.visibility = "visible"
-    //     playerTwo.scoreboard = playerTwo.scoreboard + 1
-    //     bowserScoreMobile.textContent = playerTwo.scoreboard
-    //     moveBowser1()
-    //     disableAll()
-    // } else if (playerTwo.score.includes("cell3") && playerTwo.score.includes("cell5") && playerTwo.score.includes("cell7")) {
-    //     console.log("Player 2 wins with cells: 3, 5, 7")
-    //     bowserVic.style.visibility = "visible"
-    //     bowserVicTextMobile.style.visibility = "visible"
-    //     bowserVictoryImageMobile.style.visibility = "visible"
-    //     playerTwo.scoreboard = playerTwo.scoreboard + 1
-    //     bowserScoreMobile.textContent = playerTwo.scoreboard
-    //     moveBowser1()
-    //     disableAll()
-    // } else if (playerTwo.score.includes("cell3") && playerTwo.score.includes("cell6") && playerTwo.score.includes("cell9")) {
-    //     console.log("Player 2 wins with cells: 3, 6, 9")
-    //     bowserVic.style.visibility = "visible"
-    //     bowserVicTextMobile.style.visibility = "visible"
-    //     bowserVictoryImageMobile.style.visibility = "visible"
-    //     playerTwo.scoreboard = playerTwo.scoreboard + 1
-    //     bowserScoreMobile.textContent = playerTwo.scoreboard
-    //     moveBowser1()
-    //     disableAll()
-    // } else if (playerTwo.score.includes("cell4") && playerTwo.score.includes("cell5") && playerTwo.score.includes("cell6")) {
-    //     console.log("Player 2 wins with cells: 4, 5, 6")
-    //     bowserVic.style.visibility = "visible"
-    //     bowserVicTextMobile.style.visibility = "visible"
-    //     bowserVictoryImageMobile.style.visibility = "visible"
-    //     playerTwo.scoreboard = playerTwo.scoreboard + 1
-    //     bowserScoreMobile.textContent = playerTwo.scoreboard
-    //     moveBowser1()
-    //     disableAll()
-    // } else if (playerTwo.score.includes("cell7") && playerTwo.score.includes("cell8") && playerTwo.score.includes("cell9")) {
-    //     console.log("Player 2 wins with cells: 7, 8, 9")
-    //     bowserVic.style.visibility = "visible"
-    //     bowserVicTextMobile.style.visibility = "visible"
-    //     bowserVictoryImageMobile.style.visibility = "visible"
-    //     playerTwo.scoreboard = playerTwo.scoreboard + 1
-    //     bowserScoreMobile.textContent = playerTwo.scoreboard
-    //     moveBowser1()
-    //     disableAll()
-    // } else if ((playerOne.score.length + playerTwo.score.length) == 9) {
-    //     console.log("draw")
-    //     nextRoundBtn.style.visibility = "hidden"
-    //     diceBtn.className="dice"
-    //     setTimeout(dice,2000)
-    // }
-
-    console.log("scoreboard",playerOne.scoreboard)
 
     //when a player gets 5 wins
     if(playerOne.scoreboard === 5) {
@@ -293,6 +146,7 @@ function handleTurns(event) {
         bowserWin()
     }
 }
+
 
 //when mario wins 5 times
 function marioWin() {
