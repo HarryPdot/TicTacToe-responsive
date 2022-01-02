@@ -1,7 +1,7 @@
 /* Font */
 
 
-/* @-webkit-keyframes scale-up-center {
+@-webkit-keyframes scale-up-center {
 	0% {
 	  -webkit-transform: scale(0.5);
 			  transform: scale(0.5);
@@ -11,6 +11,7 @@
 			  transform: scale(1);
 	}
   }
+  
 @keyframes scale-up-center {
 	0% {
 	  -webkit-transform: scale(0.5);
@@ -32,6 +33,7 @@
 			  transform: rotateY(180deg);
 	}
   }
+
 @keyframes flip-vertical-right {
 	0% {
 	  -webkit-transform: rotateY(0);
@@ -68,6 +70,7 @@
 			  transform-origin: 50% 100%;
 	}
   }
+
 @keyframes scale-down-bottom {
 	0% {
 	  -webkit-transform: scale(1);
@@ -82,7 +85,7 @@
 			  transform-origin: 50% 100%;
 			  opacity: 0;
 	}
-  } */
+  }
 
 
 
@@ -122,6 +125,7 @@ header {
 	align-content: center;
 	justify-content: center;
 	margin-bottom: 3vh;
+	z-index: 1;
 }
 
 .grid {
@@ -263,9 +267,115 @@ header {
 	animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
+/* dice when you draw */
+.dice {
+	background-image: url(images/mario-cube.png);
+	position: absolute;
+	display: inline-block;
+	height: 38vh;
+	width: 38vh;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	-webkit-animation: flip-vertical-right 200ms cubic-bezier(0.455, 0.030, 0.515, 0.955) 10 both;
+	animation: flip-vertical-right 200ms cubic-bezier(0.455, 0.030, 0.515, 0.955) 10 both;
+	animation-iteration-count: 10;
+	z-index: 2;
+}
 
+.marioPlusOne {
+	background-image: url(images/mario-plusOne.png);
+	position: absolute;
+	height: 38vh;
+	width: 38vh;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-color:rgb(242,204,9);
+	border-left: 10px solid rgb(157,136,6);
+	border-top: 10px solid rgb(253,243,12);
+	border-right: 10px solid rgb(244,226,10);
+	border-bottom: 10px solid rgb(107,74,3);
+	border-radius: 5px;
+	z-index: 2;
+}
 
+.bowserPlusOne {
+	background-image: url(images/bowser-plusOne.png);
+	position: absolute;
+	height: 38vh;
+	width: 38vh;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-color:rgb(242,204,9);
+	border-left: 10px solid rgb(157,136,6);
+	border-top: 10px solid rgb(253,243,12);
+	border-right: 10px solid rgb(244,226,10);
+	border-bottom: 10px solid rgb(107,74,3);
+	border-radius: 5px;
+	z-index: 2;
+}
 
+.marioMinusOne {
+	background-image: url(images/mario-minusOne.png);
+	position: absolute;
+	display: inline-block;
+	height: 38vh;
+	width: 38vh;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-color:rgb(242,204,9);
+	border-left: 10px solid rgb(157,136,6);
+	border-top: 10px solid rgb(253,243,12);
+	border-right: 10px solid rgb(244,226,10);
+	border-bottom: 10px solid rgb(107,74,3);
+	border-radius: 5px;
+	z-index: 2;
+}
+
+.bowserMinusOne {
+	background-image: url(images/bowser-minusOne.png);
+	position: absolute;
+	display: inline-block;
+	height: 38vh;
+	width: 38vh;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-color:rgb(242,204,9);
+	border-left: 10px solid rgb(157,136,6);
+	border-top: 10px solid rgb(253,243,12);
+	border-right: 10px solid rgb(244,226,10);
+	border-bottom: 10px solid rgb(107,74,3);
+	border-radius: 5px;
+	z-index: 2;
+}
+
+.musicButtons {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	position: absolute;
+	top: 1vh;
+}
+
+.musicPlay {
+	background-image: url(images/playbutton.png);
+	width: 20px;
+	height: 20px;
+	background-size: contain;
+	background-color: transparent;
+	border:none;
+}
+
+.musicPause {
+	background-image: url(images/pausebutton.png);
+	width: 20px;
+	height: 20px;
+	background-size: contain;
+	background-color: transparent;
+	border:none;
+}
 
 
 
@@ -278,21 +388,17 @@ header {
 		gap: 20vw;
 	}
 
-	#marioWin {
+	.marioStand {
 		position: absolute;
-		visibility: hidden;
-		top:0;
-	}
-	
-	#bowserWin {
-		position: absolute;
-		visibility: hidden;
-		top:0;
+		height: 0;
+		width: 0;
 	}
 
-	.stands {
-		display: none;
-	}	
+	.bowserStand {
+		position: absolute;
+		height: 0;
+		width: 0;
+	}
 
 	.marioVictoryMobile {
 		background-image: url(images/mario-victory.png);
@@ -309,7 +415,56 @@ header {
 		background-repeat: no-repeat;
 		visibility: hidden;
 	}
+
+	.scoreboardMobile {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 45vw;
+	}
+
+	.marioScoreboardMobile, 
+	.bowserScoreboardMobile, 
+	.marioScore, 
+	.bowserScore {
+		font-size: 3vh;
+		color: mistyrose;
+		font-weight: bold;
+	}
+
+	.marioScoreboardMobile {
+		margin-left: 1vw;
+	}
+
+	.bowserScoreboardMobile {
+		text-align: right;
+		margin-right: 1vw;
+	}
+
+	/* when a player wins 5 times */
+
+	#marioWin {
+		position: absolute;
+		height: 20vh;
+		left: 40vw;
+		bottom: 8vh;
+		-webkit-animation: scale-down-bottom 2s linear both;
+		animation: scale-down-bottom 2s linear both;
+		display: none;
+	}
+
+	#bowserWin {
+		position: absolute;
+		height: 20vh;
+		right: 39vw;
+		bottom: 7vh;
+		-webkit-animation: scale-down-bottom 2s linear both;
+		animation: scale-down-bottom 2s linear both;
+		display: none;
+	}
 }
+
+
+
 
 /* for landscape users */
 @media (orientation: landscape) {
@@ -333,6 +488,14 @@ header {
 		display: grid;
 		grid-template-columns: 5fr 3fr 5fr;
 		margin-bottom: auto;
+	}
+
+	.marioScoreboardMobile {
+		display: none;
+	}
+
+	.bowserScoreboardMobile {
+		display: none;
 	}
 
 /* images when you when, and text */
@@ -426,6 +589,33 @@ header {
 		display: none;
 	}
 
+	.musicButtons {
+		position: absolute;
+		top: 55px;
+		left: 35px;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+
+	}
+
+	.musicPlay {
+		background-image: url(images/playbutton.png);
+
+		width: 20px;
+		height: 20px;
+		background-size: contain;
+		background-color: transparent;
+		border:none;
+	}
+	
+	.musicPause {
+		background-image: url(images/pausebutton.png);
+		width: 20px;
+		height: 20px;
+		background-size: contain;
+		background-color: transparent;
+		border:none;
+	}
 
 
 }
