@@ -49,9 +49,10 @@ var winningConditions = [
     ['cell1','cell5','cell9'],
     ['cell3','cell5','cell7'],
 ]
-
+// win conditions
 var marioWinCondition = ""
 var bowserWinCondition = ""
+var drawCondition = 0
 
 // player scoreboard in mobile
 marioScoreMobile.textContent = playerOne.scoreboard
@@ -80,72 +81,87 @@ function handleTurns(event) {
         playerTwo.score.push(clickedOn.id)
         clickedOn.disabled = true
     }
-
     counterTurn = counterTurn + 1
-
-    winConditions()
-
-
+    conditionX()
 }
 
-function winConditions() {
+
+function conditionX() {
+    drawCondition += 1
     winningConditions.forEach(function(conditions) {
-        console.log("Conditions")
         for(var i=0; i < conditions.length; i++) {
             if(playerOne.score.includes(conditions[i])) {
                 marioWinCondition += "x"
-                if(marioWinCondition === "xxx") {
-                    console.log("mario yes")
-                    marioVic.style.visibility = "visible"
-                    playerOne.scoreboard = playerOne.scoreboard + 1
-                    marioScoreMobile.textContent = playerOne.scoreboard
-                    marioVicTextMobile.style.display = "flex"
-                    marioVictoryImageMobile.style.visibility= "visible"
-                    moveMario1()
-                    disableAll()
+                if (marioWinCondition == "xxx"){
+                    winConditions()
+                    return marioWinCondition
                 }
             } else if (playerTwo.score.includes(conditions[i])) {
                 bowserWinCondition += "x"
-                if(bowserWinCondition === "xxx") {
-                    console.log("bowser yes")
-                    bowserVic.style.visibility = "visible"
-                    bowserVicTextMobile.style.visibility = "visible"
-                    bowserVictoryImageMobile.style.visibility = "visible"
-                    playerTwo.scoreboard = playerTwo.scoreboard + 1
-                    bowserScoreMobile.textContent = playerTwo.scoreboard
-                    moveBowser1()
-                    disableAll()
+                if (bowserWinCondition == "xxx"){
+                    winConditions()
+                    return bowserWinCondition
                 }
-            } else if ((playerOne.score.length + playerTwo.score.length) == 9) {
-                console.log("draw")
-                nextRoundBtn.style.visibility = "hidden"
-                diceBtn.className="dice"
-                setTimeout(dice,2000)
-            }
-        }
+            } 
+        }  
         marioWinCondition = ""
         bowserWinCondition = ""
-
     })
-
-
-
-    //when a player gets 5 wins
-    if(playerOne.scoreboard === 5) {
-        setTimeout(function(){
-            resetBtn.style.display = "inline-block"
-            nextRoundBtn.style.display = "none"
-        }, 1500)
-        marioWin()
-    } else if(playerTwo.scoreboard === 5){
-        setTimeout(function(){
-            resetBtn.style.display = "inline-block"
-            nextRoundBtn.style.display = "none"
-        }, 1500)
-        bowserWin()
+    if (drawCondition === 9) {
+        console.log("draw yes")
+        winConditions()
+        return true
     }
 }
 
+function winConditions() {
+    console.log("working")
+    if(marioWinCondition === "xxx") {
+        console.log("mario yes")
+        marioVic.style.visibility = "visible"
+        playerOne.scoreboard = playerOne.scoreboard + 1
+        marioScoreMobile.textContent = playerOne.scoreboard
+        marioVicTextMobile.style.display = "flex"
+        marioVictoryImageMobile.style.visibility= "visible"
+        moveMario1()
+        disableAll()
+    } else if(bowserWinCondition === "xxx") {
+        console.log("bowser yes")
+        bowserVic.style.visibility = "visible"
+        bowserVicTextMobile.style.visibility = "visible"
+        bowserVictoryImageMobile.style.visibility = "visible"
+        playerTwo.scoreboard = playerTwo.scoreboard + 1
+        bowserScoreMobile.textContent = playerTwo.scoreboard
+        moveBowser1()
+        disableAll()
+    } else if ((playerOne.score.length + playerTwo.score.length) === 9 && marioWinCondition !== "xxx" && bowserWinCondition !== "xxx") {
+        console.log("draw")
+        nextRoundBtn.style.visibility = "hidden"
+        diceBtn.className="dice"
+        setTimeout(dice,2000)
+    }
+    drawCondition = 0
+    marioWinCondition = ""
+    bowserWinCondition = ""
+
+    win5Times()
+}
+function win5Times() {
+        //when a player gets 5 wins
+        if(playerOne.scoreboard === 5) {
+            setTimeout(function(){
+                resetBtn.style.display = "inline-block"
+                nextRoundBtn.style.display = "none"
+            }, 1500)
+            marioWin()
+        } else if(playerTwo.scoreboard === 5){
+            setTimeout(function(){
+                resetBtn.style.display = "inline-block"
+                nextRoundBtn.style.display = "none"
+            }, 1500)
+            bowserWin()
+        }
+}
 
 //when mario wins 5 times
 function marioWin() {
@@ -179,6 +195,7 @@ function moveMario1() {
             nextRoundBtn.style.visibility = "visible"
         }, 1500)
     }
+    win5Times()
 }
 //moving bowser
 function moveBowser1() {
@@ -196,6 +213,7 @@ function moveBowser1() {
             nextRoundBtn.style.visibility = "visible"
         }, 1500)
     }
+    win5Times()
 }
 //disabling the cells
 function disableAll() {
